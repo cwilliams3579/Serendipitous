@@ -7,14 +7,30 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
     <%= csrf_meta_tags %>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://mdbootstrap.com/live/_MDB/templates/Ecommerce/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://mdbootstrap.com/live/_MDB/templates/Ecommerce/css/mdb.css" rel="stylesheet">
+   <style>
+       .carousel,
+       .carousel-item {
+       height: 100vh;
+       }
+    </style>
   </head>
-  <body>
+  <body class="hidden-sn animated">
     <header>
       <%= render 'layouts/navigation' %>
     </header>
-    <main role="main">
+    <br><br><br>
+    <div class="container-fluid">
        <%= render 'layouts/messages' %>
        <%= yield %>
-    </main>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

@@ -24,6 +24,16 @@ group :development do
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'devise'
+# gem 'figaro'
+# gem 'fog-aws'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'activeadmin'
+gem 'spree', github: 'spree/spree'
+gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
+gem 'spree_gateway', github: 'spree/spree_gateway'
+gem 'figaro'
 gem 'high_voltage'
 gem 'jquery-rails'
 group :development do

@@ -1,0 +1,39 @@
+$primary-pink: #FD689A;
+.navbar-brand {
+    font-family: 'Great Vibes', cursive;
+    font-size: 1.5em !important;
+    font-weight: bold !important;
+    letter-spacing: 1px;
+}
+
+.vibe-text {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+  font-size: 2em;
+  letter-spacing: 1px;
+}
+
+.btn-action {
+  background-color: $primary-pink !important;
+}
+
+.pink-input {
+  color: $primary-pink !important;
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 1.5em !important;
+  font-weight: bold !important;
+  letter-spacing: 1px;
+}
+
+.text-header {
+  font-family: 'Great Vibes', cursive !important;
+  letter-spacing: 1px;
+}
+
+.txt-btn {
+  font-family: 'Great Vibes', cursive !important;
+  letter-spacing: 1px;
+  font-size: 1em !important;
+  font-weight: 400;
+  font-size: 2em;
+}

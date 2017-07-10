@@ -1,0 +1,47 @@
+<div class="col-md-4 mx-auto">
+  <div class="card grey-gradient">
+    <div class="card-block">
+      <div class="form-header grey-gradient">
+        <h3 class="text-header">
+          Article
+        </h3>
+      </div>
+      <%= form_for @article, html: { multipart: true } do |f| %>
+        <% if article.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+            <ul>
+            <% article.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="md-form">
+          <%= image_tag(@article.image_url) if @article.image? %><br>
+          <i class="fa fa-camera-retro prefix white-text"></i>
+          <%= f.file_field :image, class: "white-text" %>
+          <%= f.hidden_field :image_cache %>
+        </div>
+
+        <div class="md-form">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control pink-text pink-input' %>
+        </div>
+
+        <div class="md-form">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'md-textarea pink-text pink-input' %>
+        </div>
+
+
+        <div class="md-form">
+          <%= f.button class: "btn btn-block btn-lg btn-rounded btn-outline-white grey-gradient txt-btn",
+              data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
