@@ -16,22 +16,27 @@
         <div class="md-form">
           <i class="fa fa-user prefix white-text"></i>
           <%= f.text_field :first_name, :autofocus => true, placeholder: "John", class: 'form-control pink-text pink-input' %>
+          <label for="first_name" class="grey-text">First Name</label>
         </div>
         <div class="md-form">
           <i class="fa fa-user prefix white-text"></i>
           <%= f.text_field :last_name, placeholder: "Doe", class: 'form-control pink-text pink-input' %>
+          <label for="last_name" class="grey-text">Last Name</label>
         </div>
         <div class="md-form">
           <i class="fa fa-envelope prefix white-text"></i>
           <%= f.email_field :email, placeholder: "johndoe@gmail.com", class: 'form-control pink-text pink-input' %>
+          <label for="email" class="grey-text">Email</label>
         </div>
         <div class="md-form">
           <i class="fa fa-lock prefix white-text"></i>
-          <%= f.password_field :password, placeholder: "Create Password", class: 'form-control pink-text pink-input' %>
+          <%= f.password_field :password, placeholder: "Create A Secure Password", class: 'form-control pink-text pink-input' %>
+          <label for="password" class="grey-text">Password</label>
         </div>
         <div class="md-form">
           <i class="fa fa-lock prefix white-text"></i>
-          <%= f.password_field :password_confirmation, placeholder: "Repeat password", class: 'form-control pink-text pink-input' %>
+          <%= f.password_field :password_confirmation, placeholder: "Confirm password", class: 'form-control pink-text pink-input' %>
+          <label for="password_confirmation" class="grey-text">Confirm Password</label>
         </div>
         <div class="md-form">
           <%= f.button "Sign Up", class: "btn btn-block btn-lg btn-rounded btn-outline-white grey-gradient txt-btn", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
@@ -44,4 +49,4 @@
 </div>
 <br><br>
 
-<%= link_to '', :back, class: "fa fa-hand-o-left fa-2x white-text faa-horizontal animated" %>
+<%= link_to '', :back, class: "fa fa-hand-o-left fa-2x pink-text faa-horizontal animated" %>

@@ -34,12 +34,12 @@
 
 // apply styles to HTML elements
 // to make views framework-neutral
-// main {
-//   @extend .container;
-//   margin-top: 30px; // accommodate the navbar
-// }
+main {
+  @extend .container;
+  margin-top: 30px; // accommodate the navbar
+}
 
-// section {
-//   @extend .row;
-//   margin-top: 20px;
-// }
+section {
+  @extend .row;
+  margin-top: 20px;
+}

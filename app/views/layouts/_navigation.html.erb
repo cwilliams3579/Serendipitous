@@ -116,16 +116,34 @@
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#cart-modal-ex"><span class="badge pink">4</span> <i class="fa fa-shopping-cart grey-text" aria-hidden="true"></i> <span class="hidden-sm-down black-text">Cart</span></a>
             </li>
             <li class="nav-item">
+                <a href="/articles" class="nav-link"><i class="fa fa-book grey-text"></i> <span class="hidden-sm-down black-text">Blog</span></a>
+            </li>
+            <li class="nav-item">
+                <a href="/galleries" class="nav-link"><i class="fa fa-camera-retro grey-text"></i> <span class="hidden-sm-down black-text">Gallery</span></a>
+            </li>
+            <li class="nav-item">
                 <a href="/pages/contact" class="nav-link"><i class="fa fa-envelope grey-text"></i> <span class="hidden-sm-down black-text">Contact</span></a>
             </li>
-            <li class="nav-item dropdown" data-no-turbolink="true">
-                <a class="nav-link dropdown-toggle black-text" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user grey-text"></i> Account</a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                    <a class="dropdown-item black-text" href="#">Action</a>
-                    <a class="dropdown-item black-text" href="#">Edit Account</a>
-                    <a class="dropdown-item black-text" href="#">Sign Out</a>
-                </div>
-            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item dropdown" data-no-turbolink="true">
+                  <a class="nav-link dropdown-toggle black-text" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user grey-text"></i>
+                    <%= current_user.first_name.capitalize %>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                      <a class="dropdown-item black-text" href="#">Action</a>
+                      <a class="dropdown-item black-text" href="/users/edit">Edit Account</a>
+                      <a class="dropdown-item black-text" data-method="delete" href="/users/sign_out">Sign Out</a>
+                  </div>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                  <a href="/users/sign_up" class="nav-link"><i class="fa fa-user-plus grey-text"></i> <span class="hidden-sm-down black-text">Sign Up</span></a>
+              </li>
+              <li class="nav-item">
+                  <a href="/users/sign_in" class="nav-link"><i class="fa fa-sign-in grey-text"></i> <span class="hidden-sm-down black-text">Sign In</span></a>
+              </li>
+            <% end %>
         </ul>
     </nav>
     <!-- /.Navbar -->

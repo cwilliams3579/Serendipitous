@@ -13,7 +13,7 @@
 
             <ul>
             <% gallery.errors.full_messages.each do |message| %>
-              <li><%= message %></li>
+              <li><%= message(class: "text-danger") %></li>
             <% end %>
             </ul>
           </div>
