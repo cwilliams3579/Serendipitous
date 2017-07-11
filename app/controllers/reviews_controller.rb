@@ -8,7 +8,7 @@ class ReviewsController < InheritedResources::Base
     @review.product_id = @product.id
     respond_to do |format|
       if @review.save
-        format.html { redirect_to root_path, notice: 'Successfully created a review.' }
+        format.html { redirect_to @product, notice: 'Successfully created a review.' }
       else
         format.html { render :new }
       end

@@ -1,6 +1,7 @@
 class ProductsController < InheritedResources::Base
   before_action :authenticate_user!, except: [:index, :show]
 
+
   def create
     @product = Product.new(product_params)
      @product.user_id = current_user.id

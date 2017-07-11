@@ -16,7 +16,8 @@
                             <div class="col-md-12">
 
                                 <!--Featured image-->
-                                <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(49).jpg" class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
+                                <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(49).jpg" class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;"> -->
+                                <%= image_tag(@article.image_url) if @article.image? %>
 
                                 <!--Post data-->
                                 <div class="jumbotron wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
@@ -105,47 +106,7 @@
                                 <!--/.Content column-->
                             </div>
                             <!--/.First row-->
-                            <!--Second row-->
-                            <div class="row">
-                                <!--Image column-->
-                                <div class="col-sm-2 col-12">
-                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg">
-                                </div>
-                                <!--/.Image column-->
-                                <!--Content column-->
-                                <div class="col-sm-10 col-12">
-                                    <a><h3 class="user-name">Marta Tev</h3></a>
-                                    <div class="card-data">
-                                        <ul>
-                                            <li class="comment-date"><i class="fa fa-clock-o"></i> 08/10/2015</li>
-                                        </ul>
-                                    </div>
-                                    <p class="comment-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-                                </div>
-                                <!--/.Content column-->
-                            </div>
-                            <!--/.Second row-->
-                            <!--Third row-->
-                            <div class="row">
-                                <!--Image column-->
-                                <div class="col-sm-2 col-12">
-                                    <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg">
-                                </div>
-                                <!--/.Image column-->
-                                <!--Content column-->
-                                <div class="col-sm-10 col-12">
-                                    <a><h3 class="user-name">Anna Maria</h3></a>
-                                    <div class="card-data">
-                                        <ul>
-                                            <li class="comment-date"><i class="fa fa-clock-o"></i> 17/10/2015</li>
-                                        </ul>
-                                    </div>
-                                    <p class="comment-text">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
-                                    </p>
-                                </div>
-                                <!--/.Content column-->
-                            </div>
-                            <!--/.Third row-->
+                            
                         </div>
                         <!--/.Main wrapper-->
 
