@@ -1,12 +1,12 @@
 class ReviewsController < InheritedResources::Base
-  before_action authenticate_user! except: [:index, :show]
+  before_action :authenticate_user!, except: [:edit, :update, :destroy]
 
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Successfully created a review.' }
+        format.html { redirect_to root_path, notice: 'Successfully created a review.' }
       else
         format.html { render :new }
       end
