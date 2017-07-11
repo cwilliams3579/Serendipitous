@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :articles, dependent: :destroy
   has_many :galleries, dependent: :destroy
+  has_many :products, dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

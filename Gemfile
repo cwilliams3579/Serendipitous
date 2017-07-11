@@ -5,6 +5,7 @@ git_source(:github) do |repo_name|
 end
 ruby '2.4.1'
 gem 'rails', '~> 5.1.2'
+gem 'pg'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -31,9 +32,10 @@ gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'activeadmin'
-gem 'spree', github: 'spree/spree'
-gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
-gem 'spree_gateway', github: 'spree/spree_gateway'
+gem 'mail_form'
+# gem 'spree', github: 'spree/spree'
+# gem 'spree_auth_devise', github: 'spree/spree_auth_devise'
+# gem 'spree_gateway', github: 'spree/spree_gateway'
 gem 'high_voltage'
 gem 'jquery-rails'
 group :development do
@@ -41,9 +43,9 @@ group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end
-group :development, :test do
+# group :development, :test do
   gem 'sqlite3'
-end
+# end
 group :production do
   gem 'pg'
   gem 'rails_12factor'

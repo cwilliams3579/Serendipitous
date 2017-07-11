@@ -1,0 +1,53 @@
+<main>
+  <div class="col-md-6 mx-auto">
+    <div class="card grey-gradient">
+      <div class="card-block">
+        <div class="form-header grey-gradient">
+          <h3 class="text-header">
+            Product
+          </h3>
+        </div>
+        <%= form_for @product, html: { multipart: true } do |f| %>
+          <% if product.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+              <ul>
+              <% product.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="md-form">
+            <%= image_tag(@product.image_url) if @product.image? %>
+            <%= f.file_field :image %>
+            <%= f.hidden_field :image_cache %>
+          </div>
+
+          <div class="md-form">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control pink-text pink-input' %>
+          </div>
+
+          <div class="md-form">
+            <%= f.label :description %>
+            <%= f.text_area :description, class: 'md-textarea pink-text pink-input' %>
+          </div>
+
+          <div class="md-form">
+            <%= f.label :price %>
+            <%= f.text_field :price, class: 'md-textarea pink-text pink-input' %>
+          </div>
+
+          <div class="md-form">
+            <%= f.button class: "btn btn-block btn-lg btn-rounded btn-outline-white grey-gradient txt-btn",
+                data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i> Processing..."} %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</main>
