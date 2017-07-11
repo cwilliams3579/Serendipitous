@@ -43,9 +43,9 @@ group :development do
   gem 'hub', :require=>nil
   gem 'rails_layout'
 end
-# group :development, :test do
+group :development, :test do
   gem 'sqlite3'
-# end
+end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
