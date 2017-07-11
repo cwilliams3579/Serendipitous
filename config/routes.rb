@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  resources :reviews, except: [:show, :index] 
-  resources :products
+
+  resources :products do
+    resources :reviews, except: [:show, :index]
+  end
+
   resources :galleries
   resources :articles
   devise_for :users, :controllers => { registrations: 'registrations'}
