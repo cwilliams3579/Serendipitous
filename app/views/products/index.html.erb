@@ -1,35 +1,66 @@
-<p id="notice"><%= notice %></p>
+<main id="mainContainer">
 
-<h1>Products</h1>
+<!--Section: Products v.2-->
+<section class="section">
 
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <!--Section heading-->
+    <h1 class="section-heading">Our bestsellers</h1>
+    <!--Section sescription-->
+    <p class="section-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam. Quia, minima?</p>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.image %></td>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.price %></td>
-        <td><%= product.user %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <!--First row-->
+    <div class="row">
+      <% @products.each do |product| %>
+        <!--First column-->
+        <div class="col-lg-4 col-md-12 mb-r">
 
+            <!--Card-->
+            <div class="card card-cascade wider">
+
+                <!--Card image-->
+                <div class=" overlay hm-white-slight">
+                    <%= link_to image_tag(product.image_url, class: "img-fluid"), product_path(product) if product.image? %>
+                    <a>
+                        <div class="mask waves-effect waves-light"></div>
+                    </a>
+                </div>
+                <!--/.Card image-->
+
+                <!--Card content-->
+                <div class="card-block text-center">
+                    <!--Category & Title-->
+                    <a href="" class="text-muted"><h5>Shoes</h5></a>
+                    <h4 class="card-title"><strong><a href=""><%= product.name %></a></strong></h4>
+
+                    <!--Description-->
+                    <p class="card-text">
+                      <%= product.description %>
+                    </p>
+
+                    <!--Card footer-->
+                    <div class="card-footer">
+                        <span class="left">$<%= product.price %></span>
+                        <span class="right">
+                          <%= link_to '', product_path(product), { class: "fa fa-eye", data: { toggle: "tooltip", placement: "top", original_title: "Quick Look" } } %>
+                          <%= link_to '', product_path(product), { class: "fa fa-heart", data: { toggle: "tooltip", placement: "top", original_title: "Add to Wishlist" } } %>
+                        </span>
+                    </div>
+
+                </div>
+                <!--/.Card content-->
+
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--/First column-->
+      <% end %>
+    </div>
+    <!--/First row-->
+
+</section>
+<!--/Section: Products v.2-->
+
+</main>
 <br>
 
 <%= link_to 'New Product', new_product_path %>
