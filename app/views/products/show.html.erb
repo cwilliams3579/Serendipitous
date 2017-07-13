@@ -137,11 +137,11 @@
             <section id="reviews">
                 <div class="row">
                     <div class="col-md-12">
-                        <% Review.all.each do |review| %>
+                        <% @reviews.each do |review| %>
                           <!--First review-->
                           <div class="media">
                               <a class="media-left waves-light waves-effect waves-light">
-                                  <%= gravatar_tag current_user.email, :mini %>
+                                  <%#= gravatar_tag current_user.email, :mini %>
                               </a>
                               <div class="media-body">
                                   <h4 class="media-heading"><%= "#{review.user.full_name.titleize}" %></h4>
