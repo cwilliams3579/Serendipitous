@@ -55,11 +55,24 @@
                     </div>
                 </li>
                 <li>
+                    <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-shopping-bag"></i> Shop<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <div class="collapsible-body">
+                        <ul>
+                          <% Category.all.each do |category| %>
+                            <li><%= link_to category.name, product_path(category: category.name) %></li>
+                          <% end %>
+                        </ul>
+                    </div>
+                </li>
+                <li>
                   <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
                   <div class="collapsible-body">
                       <ul>
                         <li>
-                            <a href="/gallery" class="waves-effect">Product Gallery</a>
+                            <a href="/galleries" class="waves-effect">Product Gallery</a>
+                        </li>
+                        <li>
+                            <a href="/galleries" class="waves-effect">Selfie Gallery</a>
                         </li>
                       </ul>
                   </div>
@@ -70,6 +83,9 @@
                         <ul>
                           <li>
                               <a href="/articles" class="waves-effect">Articles</a>
+                          </li>
+                          <li>
+                              <a href="/articles/new" class="waves-effect">New Article</a>
                           </li>
                         </ul>
                     </div>

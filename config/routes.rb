@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :categories, except: [:destroy]
   resources :products do
     resources :reviews, except: [:show, :index]
   end

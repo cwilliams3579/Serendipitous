@@ -11,7 +11,6 @@
           <% if product.errors.any? %>
             <div id="error_explanation">
               <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
               <ul>
               <% product.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -24,6 +23,11 @@
             <%= image_tag(@product.image_url) if @product.image? %>
             <%= f.file_field :image %>
             <%= f.hidden_field :image_cache %>
+          </div>
+
+          <div class="md-form">
+            <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose a category"}, {class: "btn btn-default dropdown-toggle"} %>
+            <label for="category_id"></label>
           </div>
 
           <div class="md-form">
