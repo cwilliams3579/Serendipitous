@@ -1,6 +1,4 @@
 <br><br>
-<br><br>
-<br><br>
 <div class="col-md-4 mx-auto">
   <div class="card grey-gradient">
     <div class="card-block">
@@ -11,12 +9,12 @@
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="md-form">
           <i class="fa fa-envelope prefix white-text"></i>
-          <%= f.text_field :email, required: false, autofocus: true, placeholder: "johndoe@gmail.com", class: "form-control pink-text pink-input" %>
+          <%= f.text_field :email, required: false, autofocus: true, placeholder: "johndoe@gmail.com", class: "form-control white-text white-input" %>
           <label for="email" class="grey-text">Email</label>
         </div>
         <div class="md-form">
           <i class="fa fa-lock prefix white-text"></i>
-          <%= f.password_field :password, required: true, placeholder: "Enter Your Password", class: "form-control pink-text pink-input" %>
+          <%= f.password_field :password, required: true, placeholder: "Enter Your Password", class: "form-control white-text white-input" %>
           <label for="password" class="grey-text">Password</label>
         </div>
         <div class="md-form">
