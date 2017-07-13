@@ -30,16 +30,21 @@
                 <div class="card-block text-center">
                     <!--Category & Title-->
                     <a href="" class="text-muted"><h5>Shoes</h5></a>
-                    <h4 class="card-title"><strong><a href=""><%= product.name %></a></strong></h4>
+                    <h4 class="card-title"><strong><a href=""><%= link_to product.name, product_path(product) %></a></strong></h4>
+                    <div class="media-body">
+                        <ul class="rating inline-ul">
+                            <div class="star-rating" data-score= <%= @avg_rating %> ></div>
+                        </ul>
+                    </div>
 
                     <!--Description-->
                     <p class="card-text">
-                      <%= product.description %>
+                      <%= truncate(product.description, length: 200) %>
                     </p>
 
                     <!--Card footer-->
                     <div class="card-footer">
-                        <span class="left">$<%= product.price %></span>
+                        <span class="left"><%= number_to_currency(product.price) %></span>
                         <span class="right">
                           <%= link_to '', product_path(product), { class: "fa fa-eye", data: { toggle: "tooltip", placement: "top", original_title: "Quick Look" } } %>
                           <%= link_to '', product_path(product), { class: "fa fa-heart", data: { toggle: "tooltip", placement: "top", original_title: "Add to Wishlist" } } %>
@@ -64,3 +69,13 @@
 <br>
 
 <%= link_to 'New Product', new_product_path %>
+
+<script type="text/javascript">
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>

@@ -2,6 +2,7 @@ class ProductsController < InheritedResources::Base
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+
   def show
     @reviews = Review.where(product_id: @product.id).order("created_at DESC")
     if @reviews.blank?

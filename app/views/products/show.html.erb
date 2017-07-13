@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-lg-7">
                         <h2 class="h2-responsive center-on-small-only product-name"><strong><%= @product.name.titleize %></strong></h2>
-                        <h4 class="h4-responsive center-on-small-only"><span class="green-text"><strong>$<%= @product.price %></strong></span> <span class="grey-text"><small><s>$89</s></small></span></h4>
+                        <h4 class="h4-responsive center-on-small-only"><span class="green-text"><strong><%= number_to_currency(@product.price) %></strong></span> <span class="grey-text"><small><s>$89</s></small></span></h4>
 
                     <!--Accordion wrapper-->
                     <div class="accordion" id="accordion" role="tablist" aria-multiselectable="true">
