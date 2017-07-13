@@ -1,3 +1,8 @@
 .carousel, .carousel-item {
   height: 100vh;
 }
+
+.gravatar, .gravatar-mini {
+  border-radius: 50% !important;
+  max-width: 200px !important;
+}

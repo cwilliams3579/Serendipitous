@@ -136,31 +136,21 @@
             <section id="reviews">
                 <div class="row">
                     <div class="col-md-12">
-                      <% if @reviews.blank? %>
-                        <h3 class="h3-responsive">
-                          No reviews yet. Be the first to write one!
-                        </h3>
-                      <% else %>
                         <% Review.all.each do |review| %>
                           <!--First review-->
                           <div class="media">
                               <a class="media-left waves-light waves-effect waves-light">
-                                  <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
+                                  <%= gravatar_tag current_user.email, :mini %>
                               </a>
                               <div class="media-body">
                                   <h4 class="media-heading">John Doe</h4>
                                   <ul class="rating inline-ul">
-                                      <li><%= review.rating %></li>
-                                      <li><i class="fa fa-star amber-text"></i></li>
-                                      <li><i class="fa fa-star amber-text"></i></li>
-                                      <li><i class="fa fa-star"></i></li>
-                                      <li><i class="fa fa-star"></i></li>
+                                      <div class="star-rating" data-score= <%= review.rating %> ></div>
                                   </ul>
                                   <p><%= review.comment %></p>
                               </div>
                           </div>
                         <% end %>
-                      <% end %>
                     </div>
                 </div>
                 <%= link_to 'Write A Review', new_product_review_path(@product), class: "btn btn-rounded btn-outline-white pink btn-lg" %>
@@ -178,16 +168,16 @@
 
                     <!--Controls-->
                     <div class="controls-top">
-                        <a class="btn-floating btn-small primary-color waves-effect waves-light" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-                        <a class="btn-floating btn-small primary-color waves-effect waves-light" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                        <a class="btn-floating btn-small btn-action waves-effect waves-light" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+                        <a class="btn-floating btn-small btn-action waves-effect waves-light" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right"></i></a>
                     </div>
                     <!--/.Controls-->
 
                     <!--Indicators-->
                     <ol class="carousel-indicators">
-                        <li class="primary-color active" data-target="#multi-item-example" data-slide-to="0"></li>
-                        <li class="primary-color" data-target="#multi-item-example" data-slide-to="1"></li>
-                        <li class="primary-color" data-target="#multi-item-example" data-slide-to="2"></li>
+                        <li class="pink active" data-target="#multi-item-example" data-slide-to="0"></li>
+                        <li class="pink" data-target="#multi-item-example" data-slide-to="1"></li>
+                        <li class="pink" data-target="#multi-item-example" data-slide-to="2"></li>
                     </ol>
                     <!--/.Indicators-->
 
@@ -594,3 +584,13 @@
     </main>
 
 <%= link_to 'Back', products_path %>
+
+<script type="text/javascript">
+  $('.star-rating').raty({
+    path: 'https://s3.amazonaws.com/yelp-clone-rails/stars',
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    }
+  });
+</script>
