@@ -31,11 +31,9 @@
                     <!--Category & Title-->
                     <a href="" class="text-muted"><h5><%= link_to(product.category.name, product_categories_path(product)) %></h5></a>
                     <h4 class="card-title"><strong><a href=""><%= link_to product.name, product_path(product) %></a></strong></h4>
-                    <div class="media-body">
-                        <ul class="rating inline-ul">
-                            <div class="star-rating" data-score= <%= @avg_rating %> ></div>
-                        </ul>
-                    </div>
+
+                            <div class="star-rating" id="stars-inline" data-score= <%= @avg_rating %> ></div>
+
 
                     <!--Description-->
                     <p class="card-text">

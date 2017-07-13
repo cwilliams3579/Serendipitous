@@ -12,3 +12,11 @@
   bottom: 0;
   left: 0;
 }
+
+.media .media-left img, .section img{
+  box-shadow: none !important;
+}
+#stars-inline {
+  display: inline-flex !important;
+
+}
