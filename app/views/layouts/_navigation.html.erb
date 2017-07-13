@@ -1,7 +1,7 @@
 <!--Double navigation-->
-<header>
+<header class="grey-gradient">
     <!-- Sidebar navigation -->
-    <ul id="slide-out" class="side-nav hidden custom-scrollbar sn-bg-2">
+    <ul id="slide-out" class="side-nav hidden grey-gradient custom-scrollbar">
         <!-- Logo -->
         <li>
             <div class="logo-wrapper waves-light">
@@ -49,30 +49,33 @@
                               <a href="/products" class="waves-effect">Products</a>
                           </li>
                           <li>
-                              <a href="/products" class="waves-effect">Categories</a>
+                              <a href="/products/new" class="waves-effect">Upload New Product</a>
                           </li>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-shopping-bag"></i> Shop<i class="fa fa-angle-down rotate-icon"></i></a>
-                    <div class="collapsible-body">
+                    <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-diamond"></i> Categories<i class="fa fa-angle-down rotate-icon"></i></a>
+                    <% Category.all.each do |category| %>
+                      <div class="collapsible-body">
                         <ul>
-                          <% Category.all.each do |category| %>
-                            <li><%= link_to category.name, product_path(category: category.name) %></li>
-                          <% end %>
+                            <li><%= link_to category.name %></li>
                         </ul>
-                    </div>
+                      </div>
+                    <% end %>
                 </li>
                 <li>
                   <a class="collapsible-header waves-effect arrow-r"><i class="fa fa-camera-retro"></i> Gallery<i class="fa fa-angle-down rotate-icon"></i></a>
                   <div class="collapsible-body">
                       <ul>
                         <li>
-                            <a href="/galleries" class="waves-effect">Product Gallery</a>
+                            <a href="/galleries" class="waves-effect">Products Gallery</a>
                         </li>
                         <li>
                             <a href="/galleries" class="waves-effect">Selfie Gallery</a>
+                        </li>
+                        <li>
+                            <a href="/galleries/new" class="waves-effect">Upload A Selfie</a>
                         </li>
                       </ul>
                   </div>
