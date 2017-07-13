@@ -16,7 +16,18 @@
 .media .media-left img, .section img{
   box-shadow: none !important;
 }
-#stars-inline {
+#stars-inline, .stars-inline {
   display: inline-flex !important;
+}
 
+// .stars-inline {
+//   width: 200px;
+//
+// }
+
+.white-input {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 3em !important;
+  font-weight: bold !important;
+  letter-spacing: 1px;
 }

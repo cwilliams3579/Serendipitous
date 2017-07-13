@@ -1,4 +1,4 @@
-<div class="container" id="mainContainer">
+<div class="container">
   <div class="card grey-gradient">
     <div class="card-block">
       <div class="form-header grey-gradient">
@@ -19,12 +19,8 @@
           </div>
         <% end %>
 
-        <div class="media-body">
           <i class="fa fa-star fa-2x prefix white-text" aria-hidden="true"></i>
-            <ul class="inline-ul">
-                <div id="star-rating" data-score= <%= review.rating %> ></div>
-            </ul>
-        </div>
+                <div id="star-rating" class="stars-inline" data-score= <%= review.rating %> ></div>
 
         <div class="md-form">
           <i class="fa fa-pencil prefix white-text" aria-hidden="true"></i>
