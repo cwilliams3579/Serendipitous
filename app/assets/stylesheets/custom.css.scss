@@ -6,3 +6,14 @@
   border-radius: 50% !important;
   max-width: 200px !important;
 }
+
+.view, .card img, .comments-list img, .reply-form img {
+    display: inline-block !important;
+    max-width: 100%;
+    margin: 0 auto;
+    height: auto;
+}
+
+#star-rating {
+  text-align: -webkit-center !important;
+}

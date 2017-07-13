@@ -1,6 +1,15 @@
 class ProductsController < InheritedResources::Base
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def show
+    @reviews = Review.where(product_id: @product.id).order("created_at DESC")
+    if @reviews.blank?
+      @avg_rating = 0
+    else
+      @avg_rating = @reviews.average(:rating).round(2)
+    end
+  end
 
   def create
     @product = Product.new(product_params)
@@ -15,6 +24,10 @@ class ProductsController < InheritedResources::Base
   end
 
   private
+
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
     def product_params
       params.require(:product).permit(:image, :name, :description, :price, :user_id)
