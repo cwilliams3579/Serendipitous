@@ -29,10 +29,10 @@
                 <!--Card content-->
                 <div class="card-block text-center">
                     <!--Category & Title-->
+                    <div class="star-rating" id="stars-inline" data-score= <%= @avg_rating %> ></div>
                     <a href="" class="text-muted"><h5><%= link_to(product.category.name, product_categories_path(product)) %></h5></a>
                     <h4 class="card-title"><strong><a href=""><%= link_to product.name, product_path(product) %></a></strong></h4>
 
-                            <div class="star-rating" id="stars-inline" data-score= <%= @avg_rating %> ></div>
 
 
                     <!--Description-->
