@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   resources :articles
   devise_for :users, :controllers => { registrations: 'registrations'}
   root to: 'visitors#index'
+
+  get 'seller' => "products#seller"
+  get 'sales' => "orders#sales"
+  get 'purchases' => "orders#purchases"
 end

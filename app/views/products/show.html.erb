@@ -116,8 +116,9 @@
                             <div class="col-md-12 center-on-small-only text-md-right">
                                 <span class="green-text">Product available</span>
                                   <%= link_to 'Buy It Now', new_product_order_path(@product), class: "btn btn-rounded btn-outline-white pink waves-effect waves-light" %>
-
-                                <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-rounded btn-outline-white pink waves-effect waves-light" %>
+                                  <% if current_user == @product.user %>
+                                    <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-rounded btn-outline-white pink waves-effect waves-light" %>
+                                  <% end %>
                             </div>
                         </div>
                     </div>
