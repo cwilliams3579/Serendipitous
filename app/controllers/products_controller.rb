@@ -10,6 +10,10 @@ class ProductsController < InheritedResources::Base
       @category_id = Category.find_by(name: params[:category]).id
       @products = Product.where(category_id: @category_id).order("created_at DESC")
     end
+    respond_to do |format|
+      format.html
+      format.json { render json: ProductDatatable.new(view_context) }
+    end
   end
 
 
