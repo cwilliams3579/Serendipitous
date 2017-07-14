@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :reviews, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   # has_many :categories, dependent: :destroy
   # has_many :product_categories

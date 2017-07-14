@@ -1,0 +1,46 @@
+<div class="col-md-4 mx-auto">
+  <div class="card grey-gradient">
+    <div class="card-block">
+      <div class="form-header grey-gradient">
+        <h3>
+          <i class="fa fa-credit-card fa-2x" aria-hidden="true"></i>
+        </h3>
+      </div>
+      <%= form_for ([@product, @order]) do |f| %>
+        <% if order.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+            <ul>
+            <% order.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="md-form">
+          <i class="fa fa-home prefix white-text" aria-hidden="true"></i>
+          <%= f.text_field :address, id: :order_address, class: "form-control" %>
+          <label for="address">Address</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-location-arrow prefix white-text" aria-hidden="true"></i>
+          <%= f.text_field :city, id: :order_city, class: "form-control" %>
+          <label for="city">City</label>
+        </div>
+
+        <div class="md-form">
+          <i class="fa fa-map-marker prefix white-text" aria-hidden="true"></i>
+          <%= f.text_field :state, id: :order_state, class: "form-control" %>
+          <label for="state">State</label>
+        </div>
+
+        <div class="md-form">
+          <%= f.button 'Complete Order', class: "btn btn-block btn-lg btn-rounded btn-outline-white grey-gradient txt-btn", data: { disable_with: "<i class='fa fa-spinner fa-5x fa-spin'></i>"} %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
