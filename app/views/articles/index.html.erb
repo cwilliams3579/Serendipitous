@@ -101,7 +101,7 @@
               <h4 class="card-title"><%= article.title %></h4>
               <hr>
               <!--Text-->
-              <p class="card-text font-thin"><%= truncate(article.description, size: 300) %></p>
+              <p class="card-text font-thin"><%= article.description %></p>
               <div class="text-center">
                 <%= link_to "Read More", article_path(article), class: "btn btn-outline-white btn-rounded pink waves-effect waves-light" %>
               </div>

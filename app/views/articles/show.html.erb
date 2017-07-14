@@ -16,13 +16,12 @@
                             <div class="col-md-12">
 
                                 <!--Featured image-->
-                                <!-- <img src="https://mdbootstrap.com/img/Photos/Horizontal/City/12-col/img%20(49).jpg" class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;"> -->
                                 <%= image_tag(@article.image_url) if @article.image? %>
 
                                 <!--Post data-->
                                 <div class="jumbotron wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
                                     <h2><%= @article.title.capitalize %></h2>
-                                    <p>Written by <a href="#!" class="black-text"><%= @article.user.full_name.titleize %></a>  <%= time_ago_in_words(@article.created_at) %> ago</p>
+                                    <p>Posted by <a href="#!" class="black-text"><%= @article.user.full_name.titleize %></a>  <%= @article.created_at.strftime("%B %d %Y") %></p>
 
                                     <!--Social shares-->
                                     <div class="social-counters">
@@ -33,7 +32,6 @@
                                             <span class="hidden-md-down ">Facebook</span>
                                         </a>
                                         <span class="counter">98</span>
-uploads/gallery/image/1/binary-code-475664_1920.jpg 
                                         <!--Twitter-->
                                         <a class="btn btn-tw waves-effect waves-light">
                                             <i class="fa fa-twitter left"></i>

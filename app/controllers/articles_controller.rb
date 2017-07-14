@@ -1,7 +1,7 @@
 class ArticlesController < InheritedResources::Base
   before_action :authenticate_user!, except: [:index, :show]
   load_and_authorize_resource param_method: :my_sanitizer
-  load_and_authorize_resource :through => :current_user
+  load_and_authorize_resource :through => :current_user, except: [:index, :show]
 
 
   def create
